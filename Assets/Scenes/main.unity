@@ -148,8 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abad38cafc1a40f6bff894a94761ffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnDelay: 1
-  maxSpawnDelay: 2
+  minSpawnDelay: 20
+  maxSpawnDelay: 50
   gameObjects:
   - {fileID: 6012654290990082490, guid: 3ced8ef1ba7984fa8b59a4ef988ceaf7, type: 3}
 --- !u!4 &20078514
@@ -265,7 +265,7 @@ Transform:
   m_GameObject: {fileID: 26704784}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: 4.14, z: 0}
+  m_LocalPosition: {x: 5, y: 4.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -708,8 +708,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abad38cafc1a40f6bff894a94761ffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnDelay: 5
-  maxSpawnDelay: 8
+  minSpawnDelay: 0.8
+  maxSpawnDelay: 1.5
   gameObjects:
   - {fileID: 8713970089888077631, guid: 723f0c66076b54e6fae39cacf5f9daf4, type: 3}
   - {fileID: 8713970089888077631, guid: 89fd4fc91e3fd436abb4f3efc167cf6a, type: 3}
@@ -815,7 +815,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1.3
+  m_GravityScale: 2.8
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -913,7 +913,7 @@ Transform:
   m_GameObject: {fileID: 496162764}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.93, y: -1.54, z: -10}
+  m_LocalPosition: {x: -6.23, y: -1.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -933,7 +933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerAnimator: {fileID: 496162767}
   spriteRenderer: {fileID: 496162768}
-  JumpForce: 7
+  JumpForce: 12
   maxJumpCount: 2
   PlayerRigidBody: {fileID: 496162766}
   jumpAudioSource: {fileID: 496162771}
@@ -1371,7 +1371,7 @@ Transform:
   m_GameObject: {fileID: 563447911}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: 4.14, z: 0}
+  m_LocalPosition: {x: 6, y: 4.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1559,7 +1559,7 @@ Transform:
   m_GameObject: {fileID: 655691182}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: 4.14, z: 0}
+  m_LocalPosition: {x: 7, y: 4.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1714,8 +1714,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abad38cafc1a40f6bff894a94761ffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnDelay: 10
-  maxSpawnDelay: 20
+  minSpawnDelay: 5
+  maxSpawnDelay: 12
   gameObjects:
   - {fileID: 921403393618620593, guid: a71a00d1b5da14f0aa05cecc69838346, type: 3}
   - {fileID: 921403393618620593, guid: 7f8601492410f430e8f37fd35f3bac6a, type: 3}
@@ -1835,7 +1835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de7ac9a8d887413084200cbf66ce8c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 0.8
+  scrollSpeed: 1.2
   meshRenderer: {fileID: 1061614862}
 --- !u!61 &1061614866
 BoxCollider2D:
@@ -2085,8 +2085,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abad38cafc1a40f6bff894a94761ffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnDelay: 5
-  maxSpawnDelay: 7
+  minSpawnDelay: 0.8
+  maxSpawnDelay: 3
   gameObjects:
   - {fileID: 8284729623358327682, guid: f2939a2d050304b83b3f49ba62b88bd0, type: 3}
   - {fileID: 8026694698982434168, guid: 4d820a59b2abf4ea4bc703fd9113d02e, type: 3}
@@ -2261,10 +2261,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2125685732}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 212.54}
-  m_SizeDelta: {x: 369.36, y: 53.08}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -102, y: -49.050003}
+  m_SizeDelta: {x: 249.99997, y: 56.979996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1944636688
 MonoBehaviour:
@@ -2286,7 +2286,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score: 0'
+  m_text: 'score: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2320,7 +2320,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2351,7 +2351,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 106.23875, y: 0, z: -117.0166, w: 0}
+  m_margin: {x: 86.25965, y: 0, z: -117.0166, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2537,7 +2537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -2547,7 +2547,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &2125685731
 Canvas:
   m_ObjectHideFlags: 0
@@ -2557,7 +2557,7 @@ Canvas:
   m_GameObject: {fileID: 2125685728}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 2
   m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -2579,8 +2579,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125685728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 50}
+  m_LocalScale: {x: 0.02112745, y: 0.02112745, z: 0.02112745}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1944636687}
@@ -2589,8 +2589,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_SizeDelta: {x: 800.00006, y: 473.3179}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

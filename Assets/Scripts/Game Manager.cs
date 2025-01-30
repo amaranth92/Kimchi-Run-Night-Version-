@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-
+using System.Collections; 
 public enum GameState
 {
     Intro,
@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public GameObject FoodSpawner;
     public GameObject GoldenSpawner;
 
+    private int startIssue = 0; 
     public Player PlayerScript;
     public TMP_Text ScoreText;
 
@@ -36,11 +37,26 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Start()
+    IEnumerator Start()
     {
-        IntroUI.SetActive(true);
+        Lives = 3; // ✅ 첫 실행에서 Lives 초기화
+        IntroUI.SetActive(true); 
+        yield return new WaitForSeconds(0.1f);
+        InitializeGame();
     }
-
+    void InitializeGame()
+    {
+        Debug.Log("게임 초기화 완료!");
+        // 초기 설정: 캐릭터 위치, UI, 게임 변수 초기화
+        // ✅ 첫 실행일 때만 씬을 변경
+        if (!PlayerPrefs.HasKey("firstRun"))
+        {
+            PlayerPrefs.SetInt("firstRun", 1);
+            PlayerPrefs.Save();
+            SceneManager.LoadScene("main");
+        } 
+    }
+ 
     float CalculateScore()
     {
         return Time.time - PlayStartTime;
@@ -76,15 +92,17 @@ public class GameManager : MonoBehaviour
     {
         if (State == GameState.Playing)
         {
-            ScoreText.text = "Score: " + Mathf.FloorToInt(CalculateScore());
+            ScoreText.text = "score: " + Mathf.FloorToInt(CalculateScore());
         }
         else if (State == GameState.Dead)
         {
             ScoreText.text = "High Score: " + GetHighScore(); //// : High Score 제대로 표시*** ////
         }
 
+
         if (State == GameState.Intro && Input.GetKeyDown(KeyCode.Space))
         {
+
             State = GameState.Playing;
             IntroUI.SetActive(false);
             EnemySpawner.SetActive(true);
@@ -108,3 +126,4 @@ public class GameManager : MonoBehaviour
         }
     }
 }
+ 
