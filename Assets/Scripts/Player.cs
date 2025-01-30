@@ -1,5 +1,6 @@
 using UnityEngine;
-
+using System.Collections; 
+ 
 public class Player : MonoBehaviour
 {
     public Animator PlayerAnimator;
@@ -25,9 +26,30 @@ public class Player : MonoBehaviour
 
     public BoxCollider2D PlayerCollider;
 
-    void Start()
+    IEnumerator Start() 
     {
+        // ✅ GameManager가 초기화될 때까지 대기
+        while (GameManager.Instance == null)
+        {
+            yield return null;
+        }
+ 
         originalColor = spriteRenderer.color; // 원래 색상 저장
+
+        // ✅ Rigidbody 초기화
+        PlayerRigidBody.linearVelocity = Vector2.zero;
+        PlayerRigidBody.angularVelocity = 0f;
+        
+        isGrounded = true;
+        currentJumpCount = 0;
+        ResetAnimator(); // ✅ 애니메이터 강제 초기화
+    }
+
+    // ✅ 애니메이터 강제 초기화 함수 추가
+    void ResetAnimator()
+    {
+        PlayerAnimator.Rebind();
+        PlayerAnimator.Update(0);
     }
 
     void Update()
@@ -89,16 +111,17 @@ public class Player : MonoBehaviour
 
     // 🎵 점프 처리
     void HandleJump()
-    {
+    { 
         if (Input.GetKeyDown(KeyCode.Space) && (isGrounded || currentJumpCount < maxJumpCount))
         {
-            PlayerRigidBody.AddForceY(JumpForce, ForceMode2D.Impulse);
+            Debug.Log("JumpForce: " + JumpForce); // ✅ JumpForce 값이 정상적인지 확인
+            PlayerRigidBody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             isGrounded = false;
             currentJumpCount++;
 
             PlayerAnimator.SetInteger("state", 1); // 점프 애니메이션
 
-            PlaySound(jumpAudioSource, jumpSound); // 점프 효과음
+            PlaySound(jumpAudioSource, jumpSound);
         }
     }
 
@@ -159,10 +182,19 @@ public class Player : MonoBehaviour
     // 🎵 효과음 재생
     void PlaySound(AudioSource audioSource, AudioClip clip)
     {
-        if (clip != null && audioSource != null)
+        if (clip == null)
         {
-            audioSource.PlayOneShot(clip);
+            Debug.LogWarning("AudioClip이 로드되지 않았습니다!");
+            return;
         }
+
+        if (audioSource == null)
+        {
+            Debug.LogWarning("AudioSource가 없습니다!");
+            return;
+        }
+
+        audioSource.PlayOneShot(clip);
     }
     public void KillPlayer()
     {
